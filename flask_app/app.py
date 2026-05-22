@@ -61,24 +61,27 @@ def normalize_text(text):
 
     return text
 
-mlflow.set_tracking_uri('https://dagshub.com/rajhandibag/SENTIMATE-ANALYSIS-END-TO-END.mlflow')
-dagshub.init(repo_owner='rajhandibag', repo_name='SENTIMATE-ANALYSIS-END-TO-END', mlflow=True)
+# mlflow.set_tracking_uri('https://dagshub.com/rajhandibag/SENTIMATE-ANALYSIS-END-TO-END.mlflow')
+# dagshub.init(repo_owner='rajhandibag', repo_name='SENTIMATE-ANALYSIS-END-TO-END', mlflow=True)
 
 # Below code block is for production use
 # -------------------------------------------------------------------------------------
 # Set up DagsHub credentials for MLflow tracking
-# dagshub_token = os.getenv("CAPSTONE_TEST")
-# if not dagshub_token:
-#     raise EnvironmentError("CAPSTONE_TEST environment variable is not set")
+dagshub_token = os.getenv("CAPSTONE_TEST")
+if not dagshub_token:
+    raise EnvironmentError("CAPSTONE_TEST environment variable is not set")
 
-# os.environ["MLFLOW_TRACKING_USERNAME"] = dagshub_token
-# os.environ["MLFLOW_TRACKING_PASSWORD"] = dagshub_token
+os.environ["MLFLOW_TRACKING_USERNAME"] = dagshub_token
+os.environ["MLFLOW_TRACKING_PASSWORD"] = dagshub_token
 
-# dagshub_url = "https://dagshub.com"
-# repo_owner = "vikashdas770"
-# repo_name = "YT-Capstone-Project"
-# # Set up MLflow tracking URI
-# mlflow.set_tracking_uri(f'{dagshub_url}/{repo_owner}/{repo_name}.mlflow')
+dagshub_url = "https://dagshub.com"
+repo_owner = "rajhandibag"
+repo_name = "SENTIMATE-ANALYSIS-END-TO-END"
+
+# Set up MLflow tracking URI
+mlflow.set_tracking_uri(f'{dagshub_url}/{repo_owner}/{repo_name}.mlflow')
+
+
 
 app = Flask(__name__)
 
@@ -148,5 +151,5 @@ def metrics():
     return generate_latest(registry), 200, {"Content-Type": CONTENT_TYPE_LATEST}
 
 if __name__ == "__main__":
-    app.run(debug=True) # for local use
-    # app.run(debug=True, host="0.0.0.0", port=5000)
+    # app.run(debug=True) # for local use
+    app.run(debug=True, host="0.0.0.0", port=5000)
