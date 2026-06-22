@@ -52,8 +52,8 @@ The project demonstrates real-world production skills including:
 ### 1️⃣ Environment Setup
 
 ```bash
-conda create -n atlas python=3.10
-conda activate atlas
+conda create -n sentiment python=3.10
+conda activate sentiment
 pip install cookiecutter
 ```
 
@@ -264,7 +264,7 @@ password: admin
 
 ## 👨‍💻 Author
 
-**Raj Handibag**
+**Raj Handibag*****
 Aspiring ML Engineer | MLOps Enthusiast
 
 ---
