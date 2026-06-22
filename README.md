@@ -264,7 +264,7 @@ password: admin
 
 ## 👨‍💻 Author
 
-**Raj (Mybot Raj)**
+**Raj Handibag**
 Aspiring ML Engineer | MLOps Enthusiast
 
 ---
