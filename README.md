@@ -189,7 +189,7 @@ kubectl get svc
 Access service:
 
 ```bash
-curl http://<external-ip>:5000
+curl http://52.90.58.228:5000
 ```
 
 ---
@@ -217,7 +217,7 @@ prometheus --config.file=/etc/prometheus/prometheus.yml
 Access:
 
 ```
-http://<ec2-ip>:3000
+http://54.87.199.12:3000
 ```
 
 Default login:
