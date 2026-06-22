@@ -264,7 +264,8 @@ password: admin
 
 ## 👨‍💻 Author
 
-*****Raj Handibag*****
+**Raj Handibag**
+
 Aspiring ML Engineer | MLOps Enthusiast
 
 ---
